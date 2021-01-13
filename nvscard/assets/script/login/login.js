@@ -35,7 +35,6 @@ cc.Class({
             //请求服务器对战消息，根据消息然后，加载场景
             _login();
         });
-        
     },
 
     start () {
@@ -153,7 +152,7 @@ var _localLoginSucc = function() {
     cfg_player.level = 999;
     cfg_player.exp = 99999999;
     cfg_player.coin = 99999999;
-    localmsg.vplayer = cfg_player;
+    localmsg.player = cfg_player;
     var cfg_cp = {};
     cfg_cp.cardnum = 10;
     cfg_cp.data = new Array();
