@@ -6,6 +6,7 @@
 //  - https://docs.cocos.com/creator/manual/en/scripting/life-cycle-callbacks.html
 
 cc.Class({
+
     extends: cc.Component,
 
     properties: {
@@ -29,7 +30,6 @@ cc.Class({
     // LIFE-CYCLE CALLBACKS:
 
     onLoad () {
-        //
         for(let i=0;i<5;i++) {
             var card = this.node.getChildByName("card"+i);
             if(card) {
@@ -53,16 +53,34 @@ cc.Class({
     },
 
     start () {
+        //为每个节点设置逻辑卡牌
 
     },
 
     // update (dt) {},
+
+    onEnable: function () {
+        //this.node.on('foobar', this._sayHello, this);
+    },
+    
+    onDisable: function () {
+        //this.node.off('foobar', this._sayHello, this);
+    },
+
 });
+
+var l_active_node = null;
 
 //选中卡牌
 var _selectCard = function( targetNode ) {
     if(targetNode) {
-        targetNode.setsopacity(0);
+        l_active_node = targetNode;
+        targetNode._opacity = 0;
+        //节点身上应该带上逻辑card
+        let testEvent = new cc.Event.EventCustom("e-card-select", true);//创建自定义事件
+        testEvent.setUserData( targetNode.getUserData() );    //设置自定义事件中包含的数据
+        targetNode.dispatchEvent(testEvent);    //用节点分发事件
+        //targetNode.emit('say-hello', 'Hello, this is Cocos Creator');
     }
 }
 
@@ -73,6 +91,18 @@ var _moveCard = function( px, py) {
 
 //放置卡牌
 var _placeCard = function( px, py) {
-
+    if(l_active_node) {
+        l_active_node._opacity = 255;
+        //抽卡
+        //l_active_node.setUserData( window.war.drawCard() );
+    }
+    // if(targetNode) {
+    //     targetNode._opacity = 0;
+    //     //节点身上应该带上逻辑card
+    //     let testEvent = new cc.Event.EventCustom("e-card-select", true);//创建自定义事件
+    //     testEvent.setUserData( targetNode.getUserData() );    //设置自定义事件中包含的数据
+    //     targetNode.dispatchEvent(testEvent);    //用节点分发事件
+    //     //targetNode.emit('say-hello', 'Hello, this is Cocos Creator');
+    // }
 }
 

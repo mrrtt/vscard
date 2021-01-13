@@ -5,8 +5,6 @@
 // Learn life-cycle callbacks:
 //  - https://docs.cocos.com/creator/manual/en/scripting/life-cycle-callbacks.html
 
-//加载战斗需要的元素和对信息
-
 cc.Class({
     extends: cc.Component,
 
@@ -30,51 +28,11 @@ cc.Class({
 
     // LIFE-CYCLE CALLBACKS:
 
-    onLoad () {
-        //
-        
-    },
+    // onLoad () {},
 
     start () {
-        //搞战场
-        
+
     },
 
     // update (dt) {},
-
-    onEnable: function () {
-        //监听卡牌被选中的时间
-        this.node.on('e-card-select',  function ( event ) {
-            _genTmpCard( event.getUserData() );
-            event.stopPropagation();
-        });
-        //全局战斗
-        window.war = this;
-    },
-    
-    onDisable: function () {
-        this.node.off('e-card-select', function ( event ) {
-            let j = 0;
-        });
-        //全局战斗
-        window.war = nil;
-    },
-
-    drawCard : function() {
-        let i = 0;
-    }
-
-    //
 });
-
-
-//生成临时卡牌
-var _genTmpCard = function( card ) {
-    let i = 0;
-    //生成一张卡牌，挂在
-    var lay_center = this.node.getChildByName('ly_center');
-    if(lay_center) {
-        //var tmp_node = new cc.node();
-        
-    }
-}
