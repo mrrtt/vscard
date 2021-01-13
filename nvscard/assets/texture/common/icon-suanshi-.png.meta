@@ -1,0 +1,36 @@
+{
+  "ver": "2.3.5",
+  "uuid": "5cb019b6-4fcb-432e-9c24-4f77f00087c2",
+  "type": "sprite",
+  "wrapMode": "clamp",
+  "filterMode": "bilinear",
+  "premultiplyAlpha": false,
+  "genMipmaps": false,
+  "packable": true,
+  "width": 95,
+  "height": 87,
+  "platformSettings": {},
+  "subMetas": {
+    "icon-suanshi-": {
+      "ver": "1.0.4",
+      "uuid": "31c28817-b0ab-4505-90f4-e316cf54ca05",
+      "rawTextureUuid": "5cb019b6-4fcb-432e-9c24-4f77f00087c2",
+      "trimType": "auto",
+      "trimThreshold": 1,
+      "rotated": false,
+      "offsetX": -0.5,
+      "offsetY": 0.5,
+      "trimX": 0,
+      "trimY": 0,
+      "width": 94,
+      "height": 86,
+      "rawWidth": 95,
+      "rawHeight": 87,
+      "borderTop": 0,
+      "borderBottom": 0,
+      "borderLeft": 0,
+      "borderRight": 0,
+      "subMetas": {}
+    }
+  }
+}
