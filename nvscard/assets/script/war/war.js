@@ -32,7 +32,16 @@ cc.Class({
 
     onLoad () {
         //
-        
+        var t_war_bg = this.node.getChildByName('war_bg');
+        if(t_war_bg) {
+            var t_desk = t_war_bg.getChildByName('ly_desk');
+            if(t_desk) {
+                var t_script = t_desk.getComponent('vdesk');
+                if(t_script) {
+                    t_script.setGridNull(0,0);
+                }
+            }
+        }
     },
 
     start () {
@@ -75,6 +84,6 @@ var _genTmpCard = function( card ) {
     var lay_center = this.node.getChildByName('ly_center');
     if(lay_center) {
         //var tmp_node = new cc.node();
-        
+
     }
 }
