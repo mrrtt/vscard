@@ -28,7 +28,20 @@ cc.Class({
 
         //格子空
     setGridNull : function( x ,y ) {
-        let i = 0;
+        var t_aim = this.node.getChildByName('fk00');
+        if(t_aim) {
+            var t_sp = t_aim.getComponent(cc.Sprite);
+            if(t_sp) {
+
+                cc.loader.loadRes("assets/texture/war", cc.SpriteAtlas, function (err, atlas) {
+                    var frame = atlas.getSpriteFrame('sheep_down_0');
+                    t_sp.spriteFrame = frame;
+                });
+                //cc.loader.
+                //t_sp.spriteFrame = new cc.SpriteFrame(texture);
+                //t_sp.setSpriteFrame('');
+            }
+        }
     },
 
     //格子命中
