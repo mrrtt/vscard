@@ -75,7 +75,7 @@ var l_active_node = null;
 var _selectCard = function( targetNode ) {
     if(targetNode) {
         l_active_node = targetNode;
-        targetNode.active = false;
+        targetNode._opacity = 0;
         //节点身上应该带上逻辑card
         let testEvent = new cc.Event.EventCustom("e-card-select", true);//创建自定义事件
         testEvent.setUserData( targetNode.getUserData() );    //设置自定义事件中包含的数据
